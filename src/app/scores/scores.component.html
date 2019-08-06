@@ -1,3 +1,14 @@
-<p>
-  scores works!
-</p>
+<div class="scoreContainer">
+  <h1>Scoreboard</h1>
+  <p class="resultMessage" *ngIf="resultScore >= 0">
+    You scored {{ resultScore }} out of 10.
+  </p>
+  <h2>Top 10 High Scores:</h2>
+  <div class="scoreBox" *ngFor="let score of scores">
+    <p>{{ score.username }}</p>
+    <p>High Score: {{ score.score }}</p>
+  </div>
+  <a class="playAgainBtn" routerLink="/quiz" routerLinkActive="active"
+    >Play again</a
+  >
+</div>

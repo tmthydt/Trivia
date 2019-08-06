@@ -1,0 +1,65 @@
+.correct {
+  color: rgb(10, 104, 10);
+}
+
+.incorrect {
+  color: rgb(206, 7, 7);
+}
+
+.resultMessage {
+  font-size: 30px;
+}
+
+.answer {
+  text-shadow: 1px 1px rgba(58, 55, 55, 0.562);
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.questionBox {
+  margin: 10px;
+  padding: 0px 15px 15px 15px;
+  font-size: 20px;
+  width: 40vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.questionInputs {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+}
+.scoresBtn,
+.playAgainBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: rgb(243, 166, 23);
+  border: 1px solid black;
+  margin: 15px 10px 10px 10px;
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.scoresBtn:hover,
+.playAgainBtn:hover {
+  cursor: pointer;
+  background-color: rgb(233, 53, 7);
+  color: white;
+}

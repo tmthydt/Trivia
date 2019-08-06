@@ -1,6 +1,7 @@
-<router-outlet></router-outlet>
-
 <nav>
-  <a href="/quiz">Quiz</a>
-  <a href="/scores">Scores</a>
+  <a class="title" routerLink="/quiz"><h1>Trivia</h1></a>
+  <a class="navLink" routerLink="/quiz" routerLinkActive="active">Quiz</a>
+  <a class="navLink" routerLink="/Scores" routerLinkActive="active">Scores</a>
 </nav>
+
+<router-outlet class="routes"></router-outlet>

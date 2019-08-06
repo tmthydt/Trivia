@@ -1,3 +1,64 @@
-<p>
-  results works!
-</p>
+<div class="questionContainer">
+  <h1>Results</h1>
+  <p class="resultMessage">You scored {{ resultScore }} out of 10!</p>
+  <div class="questionBox" *ngFor="let question of quizQuestions; index as i">
+    <p>{{ i + 1 }}) {{ question.question_name }}</p>
+    <label>
+      <input
+        class="questionInputs"
+        type="radio"
+        name="question_{{ i + 1 }}"
+        value="{{ question.choice_1 }}"
+        [(ngModel)]="question.selected"
+      />
+      {{ question.choice_1 }}</label
+    >
+    <label>
+      <input
+        class="questionInputs"
+        type="radio"
+        name="question_{{ i + 1 }}"
+        value="{{ question.choice_2 }}"
+        [(ngModel)]="question.selected"
+      />
+      {{ question.choice_2 }}</label
+    >
+    <label>
+      <input
+        class="questionInputs"
+        type="radio"
+        name="question_{{ i + 1 }}"
+        value="{{ question.choice_3 }}"
+        [(ngModel)]="question.selected"
+      />
+      {{ question.choice_3 }}</label
+    >
+    <label>
+      <input
+        class="questionInputs"
+        type="radio"
+        name="question_{{ i + 1 }}"
+        value="{{ question.choice_4 }}"
+        [(ngModel)]="question.selected"
+      />
+      {{ question.choice_4 }}</label
+    >
+    <p
+      class="answer"
+      [ngClass]="{
+        correct: question.selected === question.answer,
+        incorrect: question.selected !== question.answer
+      }"
+    >
+      Answer: {{ question.answer }}
+    </p>
+  </div>
+  <div class="buttonContainer">
+    <a class="playAgainBtn" routerLink="/quiz" routerLinkActive="active"
+      >Play again</a
+    >
+    <a class="scoresBtn" routerLink="/Scores" routerLinkActive="active"
+      >See scores</a
+    >
+  </div>
+</div>

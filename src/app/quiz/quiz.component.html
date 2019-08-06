@@ -1,6 +1,64 @@
-<div>
-
-  <form *ngFor="let question of questionss; index as i" (ngSubmit)="onSubmit()" #questionForm="ngForm">
-  
+<form
+  class="formContainer"
+  #quizForm="ngForm"
+  (ngSubmit)="getScoreInfo(quizForm)"
+>
+  <form
+    class="nameForm"
+    #nameForm="ngForm"
+    *ngIf="!showQuestions"
+    (ngSubmit)="getNameInfo(nameForm)"
+  >
+    <p class="nameParagraph">Do you want to play a game?</p>
+    <input class="nameInput" type="text" ngModel name="userName" />
+    <button class="nameBtn">Play!</button>
   </form>
-</div>
+
+  <div class="questionContainer" *ngIf="showQuestions">
+    <div class="questionBox" *ngFor="let question of quizQuestions; index as i">
+      <p>{{ i + 1 }}) {{ question.question_name }}</p>
+      <label for="">
+        <input
+          class="questionInputs"
+          type="radio"
+          name="question_{{ i + 1 }}"
+          value="{{ question.choice_1 }}"
+          [(ngModel)]="question.selected"
+        />
+        {{ question.choice_1 }}</label
+      >
+      <label for="">
+        <input
+          class="questionInputs"
+          type="radio"
+          name="question_{{ i + 1 }}"
+          value="{{ question.choice_2 }}"
+          [(ngModel)]="question.selected"
+        />
+        {{ question.choice_2 }}</label
+      >
+      <label for="">
+        <input
+          class="questionInputs"
+          type="radio"
+          name="question_{{ i + 1 }}"
+          value="{{ question.choice_3 }}"
+          [(ngModel)]="question.selected"
+        />
+        {{ question.choice_3 }}</label
+      >
+      <label for="">
+        <input
+          class="questionInputs"
+          type="radio"
+          name="question_{{ i + 1 }}"
+          value="{{ question.choice_4 }}"
+          [(ngModel)]="question.selected"
+        />
+        {{ question.choice_4 }}</label
+      >
+    </div>
+
+    <button class="resultBtn">Show Results</button>
+  </div>
+</form>

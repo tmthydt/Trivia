@@ -1,0 +1,43 @@
+.scoreContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreBox {
+  margin: 10px;
+  padding: 0px 15px 15px 15px;
+  font-size: 20px;
+  width: 20vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resultMessage {
+  font-size: 30px;
+}
+
+.playAgainBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: rgb(243, 166, 23);
+  border: 1px solid black;
+  margin: 15px 10px 10px 10px;
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.playAgainBtn:hover {
+  cursor: pointer;
+  background-color: rgb(233, 53, 7);
+  color: white;
+}
